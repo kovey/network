@@ -16,7 +16,7 @@ use Kovey\Network\Event;
 use Kovey\Network\Handler;
 use Kovey\Logger\Logger;
 
-abstract class Base
+abstract class Base implements AdapterInterface
 {
     protected Array $config;
 

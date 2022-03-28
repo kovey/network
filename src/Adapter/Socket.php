@@ -11,13 +11,12 @@
  */
 namespace Kovey\Network\Adapter;
 
-use Kovey\Network\AdapterInterface;
 use Kovey\Network\PacketInterface;
 use Kovey\Network\HandlerInterface;
 use Swoole\Server;
 use Kovey\Network\Event;
 
-class Socket extends Base implements AdapterInterface
+class Socket extends Base
 {
     private Server $server;
 

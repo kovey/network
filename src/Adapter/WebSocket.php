@@ -11,13 +11,12 @@
  */
 namespace Kovey\Network\Adapter;
 
-use Kovey\Network\AdapterInterface;
 use Kovey\Network\PacketInterface;
 use Kovey\Network\HandlerInterface;
 use Swoole\WebSocket\Server;
 use Kovey\Network\Event;
 
-class WebSocket extends Base implements AdapterInterface
+class WebSocket extends Base
 {
     protected Server $server;
 
