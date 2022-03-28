@@ -88,6 +88,7 @@ class Socket extends Base implements AdapterInterface
             return false;
         }
 
+        $data = pack(self::PACK_TYPE, strlen($data)) . $data;
         $len = strlen($data);
         if ($len <= $this->config['package_max_length']) {
             return $this->server->send($fd, $data);
