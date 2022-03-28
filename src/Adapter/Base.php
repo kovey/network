@@ -56,26 +56,31 @@ abstract class Base implements AdapterInterface
     public function setConnect(Handler\ConnectInterface $connect) : self
     {
         $this->connect = $connect;
+        return $this;
     }
 
     public function setReceive(Handler\ReceiveInterface $receive) : self
     {
         $this->receive = $receive;
+        return $this;
     }
 
     public function setClose(Handler\CloseInterface $close) : self
     {
         $this->close = $close;
+        return $this;
     }
 
     public function setInitialize(Handler\InitializeInterface $initialize) : self
     {
         $this->initialize = $initialize;
+        return $this;
     }
 
     public function setConsole(Handler\ConsoleInterface $console) : self
     {
         $this->console = $console;
+        return $this;
     }
 
     public function workerError(\Swoole\Server $serv, \Swoole\Server\StatusInfo $info) : void
