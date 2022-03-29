@@ -51,6 +51,8 @@ abstract class Base implements AdapterInterface
         if (empty($this->config['package_body_offset'])) {
             $this->config['package_body_offset'] = AdapterInterface::BODY_OFFSET;
         }
+
+        $this->init();
     }
 
     public function setConnect(Handler\ConnectInterface $connect) : self
