@@ -73,7 +73,7 @@ class Socket extends Base
             return;
         }
 
-        $this->close->close($this, new Event\Close($event->fd));
+        $this->close->close(new Event\Close($this, $event->fd));
     }
 
     public function send(PacketInterface $packet, int $fd) : bool
