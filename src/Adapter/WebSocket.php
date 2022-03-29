@@ -68,7 +68,7 @@ class WebSocket extends Base
 
     public function onClose(Server $serv, \Swoole\Server\Event $event) : void
     {
-        $this->handler->close(new Event\Close($this, $event->fd));
+        $this->close->close(new Event\Close($this, $event->fd));
     }
 
     public function send(PacketInterface $packet, int $fd) : bool
