@@ -15,7 +15,6 @@ use Kovey\Network\PacketInterface;
 use Kovey\Network\HandlerInterface;
 use Swoole\Server;
 use Kovey\Network\Event;
-use Kovey\Library\Exception\CloseConnectionException;
 
 class Socket extends Base
 {
@@ -80,7 +79,7 @@ class Socket extends Base
     public function send(PacketInterface $packet, int $fd) : bool
     {
         if (!$this->server->exist($fd)) {
-            throw new CloseConnectionException('connect is not exist');
+            return false;
         }
 
         $data = $packet->serialize();
