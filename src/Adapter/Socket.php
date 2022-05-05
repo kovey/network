@@ -15,6 +15,7 @@ use Kovey\Network\PacketInterface;
 use Kovey\Network\HandlerInterface;
 use Swoole\Server;
 use Kovey\Network\Event;
+use Kovey\Library\Exception\CloseConnectionException;
 
 class Socket extends Base
 {

@@ -21,7 +21,7 @@ class Server
     {
         return match($type) {
             self::ADAPTER_SOCKET => new Adapter\Socket($config),
-            self::ADAPTER_WEBSOCKET => new Adapter\Websocket($config)
+            self::ADAPTER_WEBSOCKET => new Adapter\WebSocket($config)
         };
     }
 }
