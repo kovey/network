@@ -20,10 +20,13 @@ class Close implements EventInterface
 
     private int $fd;
 
-    public function __construct(AdapterInterface $server, int $fd)
+    private int $reactorId;
+
+    public function __construct(AdapterInterface $server, int $fd, int $reactorId)
     {
         $this->server = $server;
         $this->fd = $fd;
+        $this->reactorId = $reactorId;
     }
 
     public function getServer() : AdapterInterface
@@ -34,6 +37,11 @@ class Close implements EventInterface
     public function getFd() : int
     {
         return $this->fd;
+    }
+
+    public function getReactorId() : int
+    {
+        return $this->reactorId;
     }
 
     /**
